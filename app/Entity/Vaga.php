@@ -46,14 +46,19 @@ class Vaga {
 
         $database = new Database('vagas');
         $this->id = $database->insert([
-                                        'titulo' => $this->titulo,
-                                        'descricao' => $this->descricao,
-                                        'ativo' => $this->ativo,
-                                        'data' => $this->data
+            'titulo' => $this->titulo,
+            'descricao' => $this->descricao,
+            'ativo' => $this->ativo,
+            'data' => $this->data
         ]);
 
         return true;
     }
+
+    /**
+     * Método por atualizar a vaga no banco de dados
+     * @return boolean
+     */
 
     public function atualizar() {
         return (new Database('vagas'))->update('id = '.$this->id, [
@@ -64,10 +69,18 @@ class Vaga {
         ]);
     }
 
+    /**
+     * Método por deletar a vaga no banco de dados
+     * @return boolean;
+     */
     public function deletar() {
         return (new Database('vagas'))->delete('id = '.$this->id);
     }
 
+    /**
+     * Método responsável por selecionar as vagas no banco de dados
+     * 
+     */
     public static function getVagas($where = null, $order = null, $limit = null) {
         return (new Database('vagas'))->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
     }

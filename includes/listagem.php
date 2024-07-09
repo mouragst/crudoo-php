@@ -37,12 +37,37 @@ if (isset($_GET['status'])) {
 ?>
 
 <main>
-
-    <?= $mensagem ?>
     <section>
         <a href="cadastro.php">
             <button class="btn btn-success">Cadastrar vaga</button>
         </a>
+    </section>
+
+    <section>
+        <form method="get">
+
+            <div class="row my-4">
+
+                <div class="col">
+                    <label>Buscar por titulo</label>
+                    <input type="text" name="busca" class="form-control">
+                </div>
+
+                <div class="col">
+                    <label>Status</label>
+                    <select name="status" class="form-control">
+                        <option value="">Ativa/Inativa</option>
+                        <option value="s">Ativa</option>
+                        <option value="n">Inativa</option>
+                    </select>
+                </div>
+
+                <div class="col d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+
+            </div>
+        </form>
     </section>
 
     <section>
