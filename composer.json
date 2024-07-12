@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "name": "moura/crudoo-php2",
+=======
+    "name": "moura/crudoo-php",
+>>>>>>> edfbdbc7365dd84676b3e20a843d07ae7ffe32ef
     "autoload": {
         "psr-4": {
             "App\\": "app/"
